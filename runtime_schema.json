@@ -1,0 +1,26 @@
+{
+  "system_version": "2.0.0",
+  "engine": "dbt_postgres",
+  "required_fields": [
+    {
+      "name": "customer_id",
+      "type": "string",
+      "description": "A unique identifier for the customer"
+    },
+    {
+      "name": "order_id",
+      "type": "string",
+      "description": "A unique identifier for the transaction"
+    },
+    {
+      "name": "order_date",
+      "type": "datetime",
+      "description": "The exact timestamp the transaction occurred"
+    },
+    {
+      "name": "total_amount",
+      "type": "numeric",
+      "description": "The net monetary value of the transaction"
+    }
+  ]
+}
