@@ -190,7 +190,7 @@ export default function ChannelPerformancePage() {
                     ))}
                   </Pie>
                   <Tooltip
-                    formatter={(v: number) => [v.toLocaleString(), 'Customers']}
+                    formatter={(v) => [Number(v).toLocaleString(), 'Customers']}
                     contentStyle={tooltipStyle}
                   />
                 </PieChart>

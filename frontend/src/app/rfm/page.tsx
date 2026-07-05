@@ -158,7 +158,7 @@ export default function RFMPage() {
                         <Cell key={i} fill={SEGMENT_COLORS[entry.segment] || DEFAULT_COLOR} cursor="pointer" />
                       ))}
                     </Pie>
-                    <Tooltip formatter={(v: number) => [v.toLocaleString(), 'Customers']} contentStyle={tooltipStyle} />
+                    <Tooltip formatter={(v) => [Number(v).toLocaleString(), 'Customers']} contentStyle={tooltipStyle} />
                   </PieChart>
                 </ResponsiveContainer>
               </div>
