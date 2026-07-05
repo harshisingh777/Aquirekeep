@@ -54,7 +54,6 @@ export default function ChannelPerformancePage() {
   const [channelData, setChannelData] = useState<ChannelPerformanceRecord[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [activePieIndex, setActivePieIndex] = useState(0);
 
   const channelFilter = searchParams.get('channel') || '';
 
@@ -177,7 +176,6 @@ export default function ChannelPerformancePage() {
               <ResponsiveContainer width="100%" height="100%">
                 <PieChart>
                   <Pie
-                    activeIndex={activePieIndex}
                     activeShape={renderActiveShape}
                     data={pieData}
                     dataKey="value"
@@ -186,7 +184,6 @@ export default function ChannelPerformancePage() {
                     cy="50%"
                     innerRadius={55}
                     outerRadius={85}
-                    onMouseEnter={(_, index) => setActivePieIndex(index)}
                   >
                     {pieData.map((_, i) => (
                       <Cell key={i} fill={CHART_COLORS[i % CHART_COLORS.length]} />

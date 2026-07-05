@@ -55,7 +55,6 @@ export default function RFMPage() {
   const [selectedSegment, setSelectedSegment] = useState<string>('All');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [activePieIndex, setActivePieIndex] = useState(0);
 
   const channel = searchParams.get('channel') || '';
   const country = searchParams.get('country') || '';
@@ -145,7 +144,6 @@ export default function RFMPage() {
                 <ResponsiveContainer width="100%" height="100%">
                   <PieChart>
                     <Pie
-                      activeIndex={activePieIndex}
                       activeShape={renderActiveShape}
                       data={segments}
                       dataKey="count"
@@ -154,7 +152,6 @@ export default function RFMPage() {
                       cy="50%"
                       innerRadius={48}
                       outerRadius={72}
-                      onMouseEnter={(_, i) => setActivePieIndex(i)}
                       onClick={(_, i) => setSelectedSegment(segments[i]?.segment ?? 'All')}
                     >
                       {segments.map((entry, i) => (
